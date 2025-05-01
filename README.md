@@ -62,12 +62,14 @@ Silva, J., & Souza, M. (2023). PLN e Aprendizado de Máquina no Direito. SBC.
 
 ## 👨‍💻 Autor
 Andson Andre Ribeiro
+
 Projeto sob orientação do Prof. Dr. Julio Arakaki
 
 ---
 
 ## 📬 Contato
 📧 andsonandreribeiro09@gmail.com
+
 📘 Projeto acadêmico interdisciplinar: Direito + IA + História
 
 ---
