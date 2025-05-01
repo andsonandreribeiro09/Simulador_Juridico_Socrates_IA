@@ -45,6 +45,33 @@ A aplicação possui um design que mistura elementos medievais (colunas, togas, 
 
 ---
 
+## 📌 Referências
+LexML
+
+JusBrasil
+
+STF Jurisprudência
+
+Platão – Apologia de Sócrates (Domínio Público)
+
+Xenofonte – Memoráveis
+
+Silva, J., & Souza, M. (2023). PLN e Aprendizado de Máquina no Direito. SBC.
+
+---
+
+## 👨‍💻 Autor
+Andson Andre Ribeiro
+Projeto sob orientação do Prof. Dr. Julio Arakaki
+
+---
+
+## 📬 Contato
+📧 andsonandreribeiro09@gmail.com
+📘 Projeto acadêmico interdisciplinar: Direito + IA + História
+
+---
+
 ## 🧠 Tecnologias Utilizadas
 
 - Python 3.8+
@@ -73,29 +100,3 @@ python simulador_judicial_socrates.py
 # 4. Acesse:
 http://127.0.0.1:8050
 
----
-
-## 📌 Referências
-LexML
-
-JusBrasil
-
-STF Jurisprudência
-
-Platão – Apologia de Sócrates (Domínio Público)
-
-Xenofonte – Memoráveis
-
-Silva, J., & Souza, M. (2023). PLN e Aprendizado de Máquina no Direito. SBC.
-
----
-
-## 👨‍💻 Autor
-Andson Andre Ribeiro
-Projeto sob orientação do Prof. Dr. Julio Arakaki
-
----
-
-## 📬 Contato
-📧 andsonandreribeiro09@gmail.com
-📘 Projeto acadêmico interdisciplinar: Direito + IA + História
