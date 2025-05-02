@@ -82,23 +82,5 @@ Projeto sob orientação do Prof. Dr. Julio Arakaki
 - spaCy, NLTK, BERT – Processamento de Linguagem Natural
 - Plotly – Visualizações gráficas
 - Web Scraping/APIs – Coleta de jurisprudência real (futuramente)
-
----
-
-## ⚙️ Como Executar
-
-```bash
-# 1. Clone o repositório:
-git clone git@github.com:andsonandreribeiro09/Simulador_Juridico_Socrates_IA.git
-cd Simulador_Juridico_Socrates_IA
-
-# 2. Instale as dependências:
-pip install -r requirements.txt
-python -m spacy download pt_core_news_sm
-
-# 3. Rode o app:
-python simulador_judicial_socrates.py
-
-# 4. Acesse:
-http://127.0.0.1:8050
+--
 
