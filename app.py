@@ -3,6 +3,12 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 import random
 import plotly.graph_objs as go
+from flask import Flask
+
+# Inicializando o Flask
+
+# Inicializando o Flask
+server = Flask(__name__)
 
 # Dados fictícios para simulação
 casos_historicos = {
@@ -21,10 +27,12 @@ casos_historicos = {
 tribunais_modernos = ["STJ (Brasil)", "Tribunal Europeu de Direitos Humanos", "Corte Interamericana de Direitos Humanos"]
 
 # Inicializa app Dash
-app = dash.Dash(__name__)
-app.title = "Simulador Jurídico com IA"
+# Inicializando o Dash
+dash_app = dash.Dash(__name__, server=server, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-app.layout = html.Div([
+dash_app.title = "Simulador Jurídico com IA"
+
+dash_app.layout = html.Div([
     html.H1("⚖️ Simulador Jurídico - IA para Julgamentos Históricos", style={"textAlign": "center"}),
 
     # 🔽 Filtros alinhados e encostados à esquerda
@@ -68,7 +76,7 @@ app.layout = html.Div([
 ])
 
 
-@app.callback(
+@dash_app.callback(
     [Output("parecer-gerado", "children"),
      Output("grafico-resultado", "figure")],
     [Input("simular", "n_clicks")],
@@ -115,5 +123,6 @@ def simular_julgamento(n, caso, tribunal):
     return parecer, figura
 
 
-if __name__ == "__main__":
-    app.run_server(debug=True)
+# Executando a aplicação
+if __name__ == '__main__':
+    dash_app.run(server=server)
