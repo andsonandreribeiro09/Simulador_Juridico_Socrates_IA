@@ -8,7 +8,7 @@ from flask import Flask
 # Inicializando o Flask
 
 # Inicializando o Flask
-server = Flask(__name__)
+app = Flask(__name__)
 
 # Dados fictícios para simulação
 casos_historicos = {
@@ -28,7 +28,7 @@ tribunais_modernos = ["STJ (Brasil)", "Tribunal Europeu de Direitos Humanos", "C
 
 # Inicializa app Dash
 # Inicializando o Dash
-dash_app = dash.Dash(__name__, server=server, external_stylesheets=[dbc.themes.BOOTSTRAP])
+dash_app = dash.Dash(__name__, app=app)
 
 dash_app.title = "Simulador Jurídico com IA"
 
@@ -125,4 +125,4 @@ def simular_julgamento(n, caso, tribunal):
 
 # Executando a aplicação
 if __name__ == '__main__':
-    dash_app.run(server=server)
+    dash_app.run(app=app)
