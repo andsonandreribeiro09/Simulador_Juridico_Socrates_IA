@@ -6,9 +6,11 @@ import plotly.graph_objs as go
 from flask import Flask
 
 # Inicializando o Flask
+server = Flask(__name__)
 
-# Inicializando o Flask
-app = Flask(__name__)
+# Inicializa app Dash
+dash_app = dash.Dash(__name__, server=server)
+dash_app.title = "Simulador Jurídico com IA"
 
 # Dados fictícios para simulação
 casos_historicos = {
@@ -26,16 +28,9 @@ casos_historicos = {
 
 tribunais_modernos = ["STJ (Brasil)", "Tribunal Europeu de Direitos Humanos", "Corte Interamericana de Direitos Humanos"]
 
-# Inicializa app Dash
-# Inicializando o Dash
-dash_app = dash.Dash(__name__, app=app)
-
-dash_app.title = "Simulador Jurídico com IA"
-
 dash_app.layout = html.Div([
     html.H1("⚖️ Simulador Jurídico - IA para Julgamentos Históricos", style={"textAlign": "center"}),
 
-    # 🔽 Filtros alinhados e encostados à esquerda
     html.Div([
         html.Label("🕰️ Caso histórico:", style={"marginBottom": "4px"}),
         dcc.Dropdown(
@@ -62,9 +57,9 @@ dash_app.layout = html.Div([
     ],
     style={
         "position": "relative",
-        "left": "0px",        # alinhado ao canto esquerdo
-        "margin": "0",        # sem margem
-        "padding": "0",       # sem padding
+        "left": "0px",
+        "margin": "0",
+        "padding": "0",
         "textAlign": "left"
     }),
 
@@ -74,7 +69,6 @@ dash_app.layout = html.Div([
 
     dcc.Graph(id="grafico-resultado")
 ])
-
 
 @dash_app.callback(
     [Output("parecer-gerado", "children"),
@@ -92,7 +86,6 @@ def simular_julgamento(n, caso, tribunal):
         )
         return "", figura_vazia
 
-    # Dados simulados
     prob_abs = random.randint(60, 85)
     prob_reduzida = random.randint(40, 70)
     similaridade = random.randint(70, 90)
@@ -122,7 +115,7 @@ def simular_julgamento(n, caso, tribunal):
 
     return parecer, figura
 
-
-# Executando a aplicação
+# Somente executa localmente
 if __name__ == '__main__':
-    dash_app.run(app=app)
+    dash_app.run_server(debug=True)
+
