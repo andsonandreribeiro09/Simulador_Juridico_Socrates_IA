@@ -1,0 +1,54 @@
+/* assets/styles.css */
+body {
+    background-image: url('/assets/background.png');
+    background-size: cover;  /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    font-family: 'Georgia', serif;
+    color: #f0e6d2;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: #d6af62;
+}
+
+.card {
+    background: rgba(44, 42, 38, 0.85);
+    border: 1px solid #8c7c5a;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 0 10px #624c2e;
+    margin: 10px 0;
+}
+
+.button {
+    background-color: #40342a;
+    border: none;
+    color: #f5f0d5;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #6a563b;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button {
+    font-size: 14px;
+    background-color: #40342a;
+    color: #f5f0d5;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6a563b;
+}
+
+
