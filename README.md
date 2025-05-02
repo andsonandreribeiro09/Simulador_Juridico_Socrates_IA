@@ -2,7 +2,7 @@
 
 Este projeto propõe um simulador jurídico interativo com **Inteligência Artificial**, capaz de analisar **julgamentos históricos** (como o de Sócrates ou Joana d'Arc) sob a ótica de **tribunais modernos** (como o STF), utilizando **aprendizado de máquina** e **processamento de linguagem natural (NLP)**.
 
-![Banner](assets/background.jpg)
+![Banner](assets/background.png)
 
 ---
 
