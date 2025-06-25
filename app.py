@@ -5,6 +5,7 @@ from flask import Flask
 import joblib
 import sqlite3
 import bcrypt
+import numpy
 
 # ==============================
 # BANCO DE DADOS DE USUÁRIOS
