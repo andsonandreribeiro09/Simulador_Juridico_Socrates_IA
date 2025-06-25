@@ -2,7 +2,7 @@
 tensorflow==2.13.0
 werkzeug==2.2.2
 Pillow==9.4.0
-numpy==1.23.5
+numpy==1.26.4
 gdown==5.1.0
 gunicorn==21.2.0
 dash==2.9.0
