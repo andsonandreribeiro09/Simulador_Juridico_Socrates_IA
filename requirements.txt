@@ -10,5 +10,6 @@ dash-core-components==2.0.0
 dash-html-components==2.0.0
 dash-table==5.0.0
 setuptools>=59.0.0
+scikit-learn
 
 
