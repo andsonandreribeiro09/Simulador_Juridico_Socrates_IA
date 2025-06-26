@@ -5,7 +5,6 @@ from flask import Flask
 import joblib
 import sqlite3
 import bcrypt
-import numpy
 
 # ==============================
 # BANCO DE DADOS DE USUÁRIOS
@@ -160,7 +159,7 @@ app_layout = html.Div([
         html.Button("Simular Julgamento", id="simular", n_clicks=0, style={"padding": "8px 16px"})
     ]),
     html.Div(id="parecer-gerado", style={"marginTop": "20px"}),
-    dcc.Graph(id="grafico-resultado")
+    dcc.Graph(id="grafico-resultado", style={"display": "none"})
 ])
 
 # ==============================
@@ -204,26 +203,28 @@ def cadastro(n, usuario, senha):
         return "Cadastro realizado!" if sucesso else "Usuário já existe."
     return ""
 
+
 @dash_app.callback(
     Output("parecer-gerado", "children"),
     Output("grafico-resultado", "figure"),
+    Output("grafico-resultado", "style"),
     Input("simular", "n_clicks"),
     State("caso", "value"),
     State("tribunal", "value")
 )
 def simular(n, caso, tribunal):
     if n == 0:
-        return "", go.Figure(layout={"height": 500})
+        return "", go.Figure(layout={"height": 500}), {"display": "none"}
+    
     try:
         texto = simulador.gerar_texto(caso, tribunal)
         decisao = simulador.prever(texto)
         prob_abs, prob_red, similaridade, justificativa = simulador.resultados_simulados(decisao)
         parecer = simulador.gerar_parecer(caso, tribunal, decisao, prob_abs, prob_red, similaridade, justificativa)
         grafico = simulador.gerar_grafico(prob_abs, prob_red, similaridade)
-        return parecer, grafico
+        return parecer, grafico, {"display": "block"}  # <- agora o gráfico aparece
     except Exception as e:
-        return html.Div([html.H3("❌ Erro na simulação:"), html.P(str(e))]), go.Figure(layout={"height": 500})
-
+        return html.Div([html.H3("❌ Erro na simulação:"), html.P(str(e))]), go.Figure(), {"display": "none"}
 # ==============================
 # RUN
 # ==============================
